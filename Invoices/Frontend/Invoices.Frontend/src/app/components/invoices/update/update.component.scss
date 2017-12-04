@@ -1,0 +1,64 @@
+/* .squaredFour */
+.squaredFour {
+    width: 20px;
+    position: relative;
+    // margin: 20px auto;
+    label {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #fcfff4;
+      background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+      border-radius: 4px;
+      box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+      &:after {
+        content: '';
+        width: 9px;
+        height: 5px;
+        position: absolute;
+        top: 30%;
+        left: 30%;
+        border: 3px solid #333;
+        border-top: none;
+        border-right: none;
+        background: transparent;
+        opacity: 0;
+        transform: rotate(-45deg);
+      }
+      &:hover::after {
+        opacity: 0.5;
+      }
+    }
+    input[type=checkbox] {
+      visibility: hidden;
+      &:checked + label:after {
+        opacity: 1;
+      }
+    }    
+  }
+
+  .card-header{
+    cursor: pointer;
+  }
+
+  i.fa-plus,i.fa-minus, .card-title, i.fa-id-card{
+    color: white;
+  }
+
+  // .show-more {
+  //   -webkit-transition: max-height 1s;
+  //   -moz-transition: max-height 1s;
+  //   -ms-transition: max-height 1s;
+  //   -o-transition: max-height 1s;
+  //   transition: max-height 1s;
+  //   background: #e5feff;
+  //   overflow: hidden;
+  //   max-height: 0;
+  // }
+  // .show-more.show {
+  //   max-height: 300px;
+  // }
+  /* end .squaredFour */

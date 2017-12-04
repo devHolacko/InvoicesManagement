@@ -1,0 +1,117 @@
+<div *ngIf="showContent">
+    <div class="container">
+        <div class="col-sm-12">
+            <br />
+            <div class="card mb-3">
+                <div class="card-header card-success">
+                    <span class="card-title">
+                        <i class="fa fa-id-card"></i>
+                        Edit Invoice
+                    </span>
+                </div>
+                <!-- Large modal -->
+                <div *ngIf="showData" class="card-block">
+                    <form role="form" [formGroup]="editInvoiceForm" (ngSubmit)="editInvoice(editInvoiceForm)">
+                        <fieldset class="form-group">
+                            <div class="row">
+                                <div class="col-md-2">
+
+                                </div>
+                                <div class="col-md-4" [ngClass]="{'has-danger':isFieldValid('invoiceType')}">
+                                    <label>Invoice type</label>
+                                    <select ngClass="{
+                                            'form-control-danger':isFieldValid('invoiceType')
+                                                        }" formControlName="invoiceType" ngbDropDown class="form-control">
+                                        <option disabled selected value=""> -- Select Invoice Type -- </option>
+                                        <option *ngFor="let key of invoiceTypeKeys" [value]="key" [label]="invoiceType[key]"></option>
+                                    </select>
+                                    <p class="help-block badge badge-pill badge-danger" *ngIf="isFieldValid('invoiceType')">Please select Invoice Type</p>
+                                </div>
+
+                                <div class="col-md-4" [ngClass]="{'has-danger':isFieldValid('invoiceState')}">
+                                    <label>Invoice State</label>
+                                    <select ngClass="{
+                                                'form-control-danger':isFieldValid('invoiceState')
+                                                            }" formControlName="invoiceState" ngbDropDown class="form-control">
+                                        <option disabled selected value=""> -- Select Invoice State -- </option>
+                                        <option *ngFor="let key of invoiceStateKeys" [value]="key" [label]="invoiceState[key]"></option>
+                                    </select>
+                                    <p class="help-block badge badge-pill badge-danger" *ngIf="isFieldValid('invoiceState')">Please select Invoice State</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+
+                                </div>
+                                <div class="col-md-4" [ngClass]="{'has-danger':isFieldValid('description')}">
+                                    <label>Description</label>
+                                    <textarea formControlName="description" placeholder="Invoice description" class="form-control" [ngClass]="{'form-control-danger':isFieldValid('description')}"
+                                        cols="5" rows="4"></textarea>
+                                    <p class="help-block badge badge-pill badge-danger" *ngIf="isFieldValid('description')">Please enter Invoice description</p>
+                                </div>
+
+                                <div class="col-md-4" [ngClass]="{'has-danger':isFieldValid('amount')}">
+                                    <label>Amount</label>
+                                    <input formControlName="amount" class="form-control" [ngClass]="{'form-control-danger':isFieldValid('amount')}" type="number"
+                                        min="1" placeholder="Amount">
+                                    <p class="help-block badge badge-pill badge-danger" *ngIf="isFieldValid('amount')">Amount must be greater than 0</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+
+                                </div>
+                                <div class="col-md-4" [ngClass]="{'has-danger':isFieldValid('creationDate')}">
+
+                                    <label>Creation date</label>
+                                    <div class="input-group">
+                                        <input formControlName="creationDate" readonly="readonly" class="form-control input-underline input-lg" placeholder="Creation date"
+                                            name="dp" (click)="d.toggle()" ngbDatepicker #d="ngbDatepicker" [minDate]="minDate"
+                                            (ngModelChange)="creationDateChanged($event)" [ngClass]="{'from-control-danger':isFieldValid('creationDate')}">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                    </div>
+                                    <p class="help-block badge badge-pill badge-danger" *ngIf="isFieldValid('creationDate')">Please select valid creation date</p>
+                                </div>
+                                <div class="col-md-4" [ngClass]="{'has-danger':isFieldValid('dueDate')}">
+                                    <label>Due date</label>
+                                    <div class="input-group">
+                                        <input formControlName="dueDate" readonly="readonly" class="form-control input-underline input-lg" placeholder="Due date"
+                                            name="dp" (click)="dd.toggle()" ngbDatepicker #dd="ngbDatepicker" [minDate]="minDueDate"
+                                            [ngClass]="{'from-control-danger':isFieldValid('dueDate')}">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </div>
+                                    </div>
+                                    <p class="help-block badge badge-pill badge-danger" *ngIf="isFieldValid('dueDate')">Due date must be greater than Creation date</p>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-xl-2">
+
+                                </div>
+                                <div class="col-xl-2">
+
+                                </div>
+                                <div class="col-xl-2">
+                                    <button type="submit" class="btn btn-success">
+                                        Update
+                                        <i class="fa fa-check"></i>
+                                    </button>
+                                </div>
+                                <div class="col-xl-2">
+                                    <button type="button" [routerLink]="['/list']" class="btn btn-danger">
+                                        Cancel
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

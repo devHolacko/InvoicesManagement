@@ -1,0 +1,9 @@
+D:\DevStuff\Companies\Moveit\Invoices\Invoices.Model\bin\Debug\netcoreapp2.0\Invoices.Model.deps.json
+D:\DevStuff\Companies\Moveit\Invoices\Invoices.Model\bin\Debug\netcoreapp2.0\Invoices.Model.dll
+D:\DevStuff\Companies\Moveit\Invoices\Invoices.Model\bin\Debug\netcoreapp2.0\Invoices.Model.pdb
+D:\DevStuff\Companies\Moveit\Invoices\Invoices.Model\obj\Debug\netcoreapp2.0\Invoices.Model.csproj.CoreCompileInputs.cache
+D:\DevStuff\Companies\Moveit\Invoices\Invoices.Model\obj\Debug\netcoreapp2.0\Invoices.Model.AssemblyInfoInputs.cache
+D:\DevStuff\Companies\Moveit\Invoices\Invoices.Model\obj\Debug\netcoreapp2.0\Invoices.Model.AssemblyInfo.cs
+D:\DevStuff\Companies\Moveit\Invoices\Invoices.Model\obj\Debug\netcoreapp2.0\Invoices.Model.dll
+D:\DevStuff\Companies\Moveit\Invoices\Invoices.Model\obj\Debug\netcoreapp2.0\Invoices.Model.pdb
+D:\DevStuff\Companies\Moveit\Invoices\Invoices.Model\obj\Debug\netcoreapp2.0\Invoices.Model.csprojResolveAssemblyReference.cache
